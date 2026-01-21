@@ -1,0 +1,217 @@
+:root {
+    --bg-color: #0f111a;       /* 深邃黑蓝背景 */
+    --card-bg: rgba(255, 255, 255, 0.05); /* 半透明卡片 */
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent-color: #00f2ff;   /* 赛博朋克青 */
+    --accent-secondary: #7000ff; /* 霓虹紫 */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* 建议引入 Google Fonts Inter */
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* --- 背景动态光晕 (艺术氛围) --- */
+.ambient-light {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.6;
+    animation: float 10s infinite alternate;
+}
+
+.one {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-secondary), transparent);
+    top: -100px;
+    left: -100px;
+}
+
+.two {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-color), transparent);
+    bottom: -50px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* --- 主体布局 --- */
+.container {
+    max-width: 1000px; /*稍微加宽以适应左右布局*/
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+.divider {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    margin: 30px auto;
+}
+
+/* --- 卡片设计 (玻璃拟态) --- */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2); 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.tag {
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--accent-color);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    white-space: nowrap;
+}
+
+/* --- 对比网格布局 (左右分栏) --- */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左右两栏等宽 */
+    gap: 30px; /* 两栏间距 */
+    align-items: start;
+}
+
+.channel-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 标签样式 */
+.channel-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.channel-label.muted {
+    color: var(--text-muted);
+}
+
+.channel-label.accent {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+/* --- 图片容器 --- */
+.visualizer-container {
+    width: 100%;
+    height: 180px; /* 固定高度，确保排版整齐 */
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden; /* 防止图片溢出 */
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: border-color 0.3s;
+}
+
+.spectrogram {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* 强制拉伸填满，防止留黑边 */
+}
+
+/* 右侧增强后的特殊高亮效果 */
+.glow .visualizer-container {
+    border-color: rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.05);
+}
+
+/* --- 音频播放器 --- */
+audio {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    filter: invert(1) hue-rotate(180deg) saturate(0); /* 反色滤镜让播放器适配深色模式 */
+    opacity: 0.9;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr; /* 手机上变为单列 */
+        gap: 40px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 40px;
+}
