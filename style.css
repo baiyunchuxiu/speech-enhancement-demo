@@ -1,23 +1,23 @@
 :root {
-    --bg-color: #0f111a;       /* 深邃黑蓝背景 */
-    --card-bg: rgba(255, 255, 255, 0.05); /* 半透明卡片 */
+    --bg-color: #0f111a;       /* Deep black-blue background */
+    --card-bg: rgba(255, 255, 255, 0.05); /* Translucent cards */
     --text-main: #ffffff;
     --text-muted: #a0a0a0;
-    --accent-color: #00f2ff;   /* 赛博朋克青 */
-    --accent-secondary: #7000ff; /* 霓虹紫 */
+    --accent-color: #00f2ff;   /* Cyberpunk cyan */
+    --accent-secondary: #7000ff; /* Neon purple */
     --glass-border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif; /* 建议引入 Google Fonts Inter */
+    font-family: 'Inter', sans-serif; /* Recommended Google Fonts Inter */
     background-color: var(--bg-color);
     color: var(--text-main);
     overflow-x: hidden;
     min-height: 100vh;
 }
 
-/* --- 背景动态光晕 (艺术氛围) --- */
+/* --- Ambient Light Halo (Artistic Vibe) --- */
 .ambient-light {
     position: fixed;
     border-radius: 50%;
@@ -49,9 +49,9 @@ body {
     100% { transform: translate(50px, 50px); }
 }
 
-/* --- 主体布局 --- */
+/* --- Main Layout --- */
 .container {
-    max-width: 1000px; /*稍微加宽以适应左右布局*/
+    max-width: 1000px; /* Slightly widened to fit the two-column layout */
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -89,7 +89,7 @@ h1 {
     margin: 30px auto;
 }
 
-/* --- 卡片设计 (玻璃拟态) --- */
+/* --- Card Design (Glassmorphism) --- */
 .card {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
@@ -98,7 +98,7 @@ h1 {
     border-radius: 20px;
     padding: 30px;
     margin-bottom: 40px;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.2); 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -131,11 +131,11 @@ h1 {
     white-space: nowrap;
 }
 
-/* --- 对比网格布局 (左右分栏) --- */
+/* --- Comparison Grid Layout (Left-Right Split) --- */
 .comparison-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 左右两栏等宽 */
-    gap: 30px; /* 两栏间距 */
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    gap: 30px; /* Gap between columns */
     align-items: start;
 }
 
@@ -145,7 +145,7 @@ h1 {
     gap: 12px;
 }
 
-/* 标签样式 */
+/* Label Styles */
 .channel-label {
     font-size: 0.85rem;
     font-weight: 600;
@@ -162,13 +162,13 @@ h1 {
     text-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
 }
 
-/* --- 图片容器 --- */
+/* --- Image Container --- */
 .visualizer-container {
     width: 100%;
-    height: 180px; /* 固定高度，确保排版整齐 */
+    height: 180px; /* Fixed height to ensure neat layout */
     background: #000;
     border-radius: 12px;
-    overflow: hidden; /* 防止图片溢出 */
+    overflow: hidden; /* Prevent image overflow */
     position: relative;
     border: 1px solid rgba(255,255,255,0.1);
     transition: border-color 0.3s;
@@ -177,28 +177,28 @@ h1 {
 .spectrogram {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* 强制拉伸填满，防止留黑边 */
+    object-fit: fill; /* Force stretch to fill, avoiding black borders */
 }
 
-/* 右侧增强后的特殊高亮效果 */
+/* Special highlight effect for the enhanced side on the right */
 .glow .visualizer-container {
     border-color: rgba(0, 242, 255, 0.3);
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.05);
 }
 
-/* --- 音频播放器 --- */
+/* --- Audio Player --- */
 audio {
     width: 100%;
     height: 40px;
     border-radius: 8px;
-    filter: invert(1) hue-rotate(180deg) saturate(0); /* 反色滤镜让播放器适配深色模式 */
+    filter: invert(1) hue-rotate(180deg) saturate(0); /* Invert filter to adapt player to dark mode */
     opacity: 0.9;
 }
 
-/* 移动端适配 */
+/* Mobile Adaptation */
 @media (max-width: 768px) {
     .comparison-grid {
-        grid-template-columns: 1fr; /* 手机上变为单列 */
+        grid-template-columns: 1fr; /* Single column on mobile */
         gap: 40px;
     }
     
@@ -214,4 +214,31 @@ footer {
     font-size: 0.9rem;
     border-top: 1px solid rgba(255,255,255,0.05);
     margin-top: 40px;
+}
+
+/* --- Section Annotation Block (Added) --- */
+.section-annotation {
+    margin: 20px 0 40px 0;
+    padding: 20px 30px;
+    background: rgba(0, 242, 255, 0.05); /* Very faint cyan background */
+    border-left: 4px solid var(--accent-color); /* Left cyan accent line */
+    border-radius: 0 12px 12px 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-annotation h3 {
+    margin: 0 0 8px 0;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.section-annotation p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>语音增强效果展示 | Speech Enhancement Demo</title>
+    <title>Speech Enhancement Demo</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
@@ -15,8 +15,8 @@
     <main class="container">
         
         <header class="hero">
-            <h1>语音增强 <span class="highlight">效果展示</span></h1>
-            <p class="subtitle">IMU-Aided Speech Enhancement for COTS Earphones</p>
+            <h1>Speech Enhancement <span class="highlight">Demo</span></h1>
+            <p class="subtitle">IMU-guided Full-band Speech Enhancement</p>
             <div class="divider"></div>
         </header>
 
@@ -24,138 +24,168 @@
             
             <article class="card">
                 <div class="card-header">
-                    <h2>场景 01: 办公室混响 (Office Reverb)</h2>
-                    <span class="tag">60dB</span>
+                    <h2>Scenario 01: Crowded Metro</h2>
+                    <span class="tag">80 dB</span>
                 </div>
                 <div class="comparison-grid">
                     <div class="channel-column">
                         <div class="channel-label muted">Input (Noisy)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/noisy_4_1_spec.png" alt="Noisy Spec" class="spectrogram">
+                            <img src="assets2/img/noisy1.png" alt="Noisy Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/noisy_4_1.wav"></audio>
+                        <audio controls src="assets2/audio/noisy1.wav"></audio>
                     </div>
                     <div class="channel-column glow">
                         <div class="channel-label accent">Output (Enhanced)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/enhanced_4_1_spec.png" alt="Enhanced Spec" class="spectrogram">
+                            <img src="assets2/img/enhanced1.png" alt="Enhanced Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/enhanced_4_1.wav"></audio>
+                        <audio controls src="assets2/audio/enhanced1.wav"></audio>
                     </div>
                 </div>
             </article>
 
             <article class="card">
                 <div class="card-header">
-                    <h2>场景 02: 咖啡厅噪声 (Coffee Bar)</h2>
-                    <span class="tag">70dB</span>
+                    <h2>Scenario 02: Coffee Bar</h2>
+                    <span class="tag">70 dB</span>
                 </div>
                 <div class="comparison-grid">
                     <div class="channel-column">
                         <div class="channel-label muted">Input (Noisy)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/noisy_4_2_spec.png" alt="Noisy Spec" class="spectrogram">
+                            <img src="assets2/img/noisy2.png" alt="Noisy Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/noisy_4_2.wav"></audio>
+                        <audio controls src="assets2/audio/noisy2.wav"></audio>
                     </div>
                     <div class="channel-column glow">
                         <div class="channel-label accent">Output (Enhanced)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/enhanced_4_2_spec.png" alt="Enhanced Spec" class="spectrogram">
+                            <img src="assets2/img/enhanced2.png" alt="Enhanced Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/enhanced_4_2.wav"></audio>
+                        <audio controls src="assets2/audio/enhanced2.wav"></audio>
                     </div>
                 </div>
             </article>
 
             <article class="card">
                 <div class="card-header">
-                    <h2>场景 03: 街道交通 (Street Traffic)</h2>
-                    <span class="tag">80dB</span>
+                    <h2>Scenario 03: Lab Reverb</h2>
+                    <span class="tag">60 dB</span>
                 </div>
                 <div class="comparison-grid">
                     <div class="channel-column">
                         <div class="channel-label muted">Input (Noisy)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/noisy_5_1_spec.png" alt="Noisy Spec" class="spectrogram">
+                            <img src="assets2/img/noisy3.png" alt="Noisy Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/noisy_5_1.wav"></audio>
+                        <audio controls src="assets2/audio/noisy3.wav"></audio>
                     </div>
                     <div class="channel-column glow">
                         <div class="channel-label accent">Output (Enhanced)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/enhanced_5_1_spec.png" alt="Enhanced Spec" class="spectrogram">
+                            <img src="assets2/img/enhanced3.png" alt="Enhanced Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/enhanced_5_1.wav"></audio>
+                        <audio controls src="assets2/audio/enhanced3.wav"></audio>
                     </div>
                 </div>
             </article>
 
+            <div class="section-annotation">
+                <h3>👇 Note</h3>
+                <p>The speaker's voice noise used was derived from the public dataset TIMIT and has a sampling rate of 16kHz.</p>
+            </div>
+            
             <article class="card">
                 <div class="card-header">
-                    <h2>场景 04: 环境噪声+单人说话 (Environmental noise + single person speaking)</h2>
-                    <span class="tag">1-Speaker Mix</span>
-                </div>
-                <div class="comparison-grid">
-                    <div class="channel-column">
-                        <div class="channel-label muted">Input (Noisy)</div>
-                        <div class="visualizer-container">
-                            <img src="assets/img/noisy_5_2_spec.png" alt="Noisy Spec" class="spectrogram">
-                        </div>
-                        <audio controls src="assets/audio/noisy_5_2.wav"></audio>
-                    </div>
-                    <div class="channel-column glow">
-                        <div class="channel-label accent">Output (Enhanced)</div>
-                        <div class="visualizer-container">
-                            <img src="assets/img/enhanced_5_2_spec.png" alt="Enhanced Spec" class="spectrogram">
-                        </div>
-                        <audio controls src="assets/audio/enhanced_5_2.wav"></audio>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-header">
-                    <h2>场景 05: 环境噪声+2人说话 (Environmental noise + Two people talking)</h2>
-                    <span class="tag">2-Speaker Mix</span>
-                </div>
-                <div class="comparison-grid">
-                    <div class="channel-column">
-                        <div class="channel-label muted">Input (Noisy)</div>
-                        <div class="visualizer-container">
-                            <img src="assets/img/noisy_6_1_spec.png" alt="Noisy Spec" class="spectrogram">
-                        </div>
-                        <audio controls src="assets/audio/noisy_6_1.wav"></audio>
-                    </div>
-                    <div class="channel-column glow">
-                        <div class="channel-label accent">Output (Enhanced)</div>
-                        <div class="visualizer-container">
-                            <img src="assets/img/enhanced_6_1_spec.png" alt="Enhanced Spec" class="spectrogram">
-                        </div>
-                        <audio controls src="assets/audio/enhanced_6_1.wav"></audio>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-header">
-                    <h2>场景 06: 环境噪声+3人说话 (Environmental noise + Three people talking)</h2>
+                    <h2>Scenario 04: Environmental Noise + Three Speaker</h2>
                     <span class="tag">3-Speaker Mix</span>
                 </div>
                 <div class="comparison-grid">
                     <div class="channel-column">
                         <div class="channel-label muted">Input (Noisy)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/noisy_6_2_spec.png" alt="Noisy Spec" class="spectrogram">
+                            <img src="assets2/img/noisy4.png" alt="Noisy Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/noisy_6_2.wav"></audio>
+                        <audio controls src="assets2/audio/noisy4.wav"></audio>
                     </div>
                     <div class="channel-column glow">
                         <div class="channel-label accent">Output (Enhanced)</div>
                         <div class="visualizer-container">
-                            <img src="assets/img/enhanced_6_2_spec.png" alt="Enhanced Spec" class="spectrogram">
+                            <img src="assets2/img/enhanced4.png" alt="Enhanced Spec" class="spectrogram">
                         </div>
-                        <audio controls src="assets/audio/enhanced_6_2.wav"></audio>
+                        <audio controls src="assets2/audio/enhanced4.wav"></audio>
+                    </div>
+                </div>
+            </article>
+
+            
+
+            <article class="card">
+                <div class="card-header">
+                    <h2>Scenario 05: Environmental Noise + Two Speakers</h2>
+                    <span class="tag">2-Speaker Mix</span>
+                </div>
+                <div class="comparison-grid">
+                    <div class="channel-column">
+                        <div class="channel-label muted">Input (Noisy)</div>
+                        <div class="visualizer-container">
+                            <img src="assets2/img/noisy5.png" alt="Noisy Spec" class="spectrogram">
+                        </div>
+                        <audio controls src="assets2/audio/noisy5.wav"></audio>
+                    </div>
+                    <div class="channel-column glow">
+                        <div class="channel-label accent">Output (Enhanced)</div>
+                        <div class="visualizer-container">
+                            <img src="assets2/img/enhanced5.png" alt="Enhanced Spec" class="spectrogram">
+                        </div>
+                        <audio controls src="assets2/audio/enhanced5.wav"></audio>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <h2>Scenario 06: Environmental Noise + Single Speakers</h2>
+                    <span class="tag">1-Speaker Mix</span>
+                </div>
+                <div class="comparison-grid">
+                    <div class="channel-column">
+                        <div class="channel-label muted">Input (Noisy)</div>
+                        <div class="visualizer-container">
+                            <img src="assets2/img/noisy6.png" alt="Noisy Spec" class="spectrogram">
+                        </div>
+                        <audio controls src="assets2/audio/noisy6.wav"></audio>
+                    </div>
+                    <div class="channel-column glow">
+                        <div class="channel-label accent">Output (Enhanced)</div>
+                        <div class="visualizer-container">
+                            <img src="assets2/img/enhanced6.png" alt="Enhanced Spec" class="spectrogram">
+                        </div>
+                        <audio controls src="assets2/audio/enhanced6.wav"></audio>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <h2>Scenario 07: 4kHz Speech VS Full-band Speech</h2>
+                    <span class="tag">Comparison</span>
+                </div>
+                <div class="comparison-grid">
+                    <div class="channel-column">
+                        <div class="channel-label muted">4kHz Speech</div>
+                        <div class="visualizer-container">
+                            <img src="assets/img/enhanced_9_1_4khz_0.3.png" alt="Noisy Spec" class="spectrogram">
+                        </div>
+                        <audio controls src="assets2/audio/enhanced_9_1_4khz_0.3.wav"></audio>
+                    </div>
+                    <div class="channel-column glow">
+                        <div class="channel-label accent">Full-band Speech</div>
+                        <div class="visualizer-container">
+                            <img src="assets/img/enhanced_9_1_0.3.png" alt="Enhanced Spec" class="spectrogram">
+                        </div>
+                        <audio controls src="assets2/audio/enhanced_9_1_0.3.wav"></audio>
                     </div>
                 </div>
             </article>
